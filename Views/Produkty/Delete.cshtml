@@ -1,0 +1,57 @@
+﻿@model Sklep_muzyczny.Models.Produkt
+
+@{
+    ViewData["Title"] = "Usuń";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Czy na pewno chcesz usunąć?</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kategoria)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kategoria.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Podkategoria)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Podkategoria.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Producent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Producent.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataProdukcji)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataProdukcji)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ProduktId" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Index">Powrót</a>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+﻿@model Sklep_muzyczny.Models.Produkt
+
+@{
+    ViewData["Title"] = "Edytuj";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProduktId" />
+            <div class="form-group">
+                <label asp-for="KategoriaId" class="control-label"></label>
+                <select asp-for="KategoriaId" class="form-control" asp-items="ViewBag.KategoriaId"></select>
+                <span asp-validation-for="KategoriaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PodkategoriaId" class="control-label"></label>
+                <select asp-for="PodkategoriaId" class="form-control" asp-items="ViewBag.PodkategoriaId"></select>
+                <span asp-validation-for="PodkategoriaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProducentId" class="control-label"></label>
+                <select asp-for="ProducentId" class="form-control" asp-items="ViewBag.ProducentId"></select>
+                <span asp-validation-for="ProducentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataProdukcji" class="control-label"></label>
+                <input asp-for="DataProdukcji" class="form-control" />
+                <span asp-validation-for="DataProdukcji" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cena" class="control-label"></label>
+                <input asp-for="Cena" class="form-control" />
+                <span asp-validation-for="Cena" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-top:10px;">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div style="margin-top:10px;">
+    <a asp-action="Index">Powrót</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,30 @@
+﻿@model Sklep_muzyczny.Models.Kategoria
+
+@{
+    ViewData["Title"] = "Szczegóły";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KategoriaId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KategoriaId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.KategoriaId">Edytuj</a> |
+    <a asp-action="Index">Powrót</a>
+</div>

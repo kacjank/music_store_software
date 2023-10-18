@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Sklep_muzyczny.Models.Wojewodztwo>
+
+@{
+    ViewData["Title"] = "Województwa";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Dodaj województwo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WojewodztwoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WojewodztwoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WojewodztwoId">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.WojewodztwoId">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.WojewodztwoId">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

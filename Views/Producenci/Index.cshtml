@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Sklep_muzyczny.Models.Producent>
+
+@{
+    ViewData["Title"] = "Producenci";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Dodaj producenta</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProducentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kraj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RokZalozenia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProducentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kraj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RokZalozenia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProducentId">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.ProducentId">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProducentId">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

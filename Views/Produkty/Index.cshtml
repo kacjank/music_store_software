@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Sklep_muzyczny.Models.Produkt>
+
+@{
+    ViewData["Title"] = "Katalog produktów";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Dodaj produkt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduktId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Podkategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataProdukcji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cena)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduktId)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Kategoria.Nazwa)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Podkategoria.Nazwa)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Producent.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataProdukcji)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cena)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProduktId">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.ProduktId">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProduktId">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
