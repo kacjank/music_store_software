@@ -3,25 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sklep_muzyczny.Models
 {
-    //public enum Wojewodztwo
-    //{
-    //    [Display(Name = "dolnośląskie")] dolnoslaskie,
-    //    [Display(Name = "kujawsko-pomorskie")] kujawskopomorskie,
-    //    lubelskie,
-    //    lubuskie,
-    //    [Display(Name = "łódzkie")] lodzkie,
-    //    [Display(Name = "małopolskie")] malopolskie,
-    //    mazowieckie,
-    //    opolskie,
-    //    podkarpackie,
-    //    podlaskie,
-    //    pomorskie,
-    //    [Display(Name = "śląskie")] slaskie,
-    //    [Display(Name = "świętokrzyskie")] swietokrzyskie,
-    //    [Display(Name = "marmińsko-mazurskie")] warminskomazurskie,
-    //    wielkopolskie,
-    //    zachodniopomorskie
-    //}
     public class Klient
     {
         [Display(Name = "Id")] public int KlientId { get; set; }
